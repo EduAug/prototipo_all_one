@@ -1,0 +1,20 @@
+<form #formRef="ngForm" (ngSubmit)="create()">
+  <input type="text" name="display" placeholder="Display Name" required [(ngModel)]="display">
+  <input type="email" name="mail" placeholder="E-mail" required [(ngModel)]="email">
+  <input type="password" name="passwd" placeholder="Password" required [(ngModel)]="password">
+  <input type="date" name="birthday" placeholder="Your birthday" required [(ngModel)]="birthday">
+  <button (click)="getUserLocation($event)">Get Location</button>
+
+  <button type="button" [disabled]="!formRef.valid || !fullAddress" (click)="create()">Create Account</button>
+</form>
+
+<input type="text" [(ngModel)]="topicName" (keyup)="fetchMatchingTopics()">
+<select (change)="selectTopic($event)">
+  <option value="" disabled selected>Select a topic</option>
+  <option *ngFor="let topic of matchingTopics" [value]="topic.id">{{ topic.name }}</option>
+</select>
+
+
+<div *ngIf="fullAddress">
+  {{ fullAddress }}
+</div>

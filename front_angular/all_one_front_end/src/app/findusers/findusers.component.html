@@ -1,0 +1,18 @@
+<h2 class="text-center">Looking to find new contacts?</h2>
+
+<div>
+  <label>Filter by Distance:</label>
+  <input type="radio" name="maxDistance" value="100" [(ngModel)]="selectedDistance"> <= 100 km
+  <input type="radio" name="maxDistance" value="200" [(ngModel)]="selectedDistance"> <= 200 km
+  <input type="radio" name="maxDistance" value="300" [(ngModel)]="selectedDistance"> <= 300 km
+  <input type="radio" name="maxDistance" value="500" [(ngModel)]="selectedDistance"> <= 500 km
+  <input type="radio" name="maxDistance" value="1000" [(ngModel)]="selectedDistance"> <= 1000 km
+  <input type="radio" name="maxDistance" value="500000000" [(ngModel)]="selectedDistance"> Unfiltered
+  <button (click)="onFindUsers()">Go!</button>
+</div>
+
+<div *ngIf="users.length > 0">
+  <app-individual-user-card *ngFor="let user of users" [user]="user" (cardClicked)="onUserCardClick($event)"></app-individual-user-card>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,6 @@
+<h2 class="text-center">Looking for new topics of your interest?</h2>
+<input type="text" [(ngModel)]="topicName" (input)="onInputChange()" placeholder="Type the topic here!">
+<div *ngIf="matchingTopics.length > 0">
+  <app-individual-topic-card *ngFor="let topic of matchingTopics" [topicName]="topic.name" (topicSelected)="selectTopic(topic)"></app-individual-topic-card>
+</div>
+<app-footer></app-footer>

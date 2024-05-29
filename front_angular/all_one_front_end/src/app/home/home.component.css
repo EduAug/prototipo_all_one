@@ -1,0 +1,32 @@
+.bottom-fix {
+  position: fixed;
+  bottom: 7vh;
+  padding-right: 50%;
+}
+
+.centerpiece {
+  background-color: #444444;
+  width: 80%;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chat-messages {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+
+.other-message {
+  background-color: white;
+  margin-bottom: 10px;
+}
+.own-message {
+  color: white;
+  text-align: end;
+  background-color: #303030;
+  margin-bottom: 10px;
+}

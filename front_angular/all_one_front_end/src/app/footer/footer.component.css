@@ -1,0 +1,35 @@
+.container-fluid {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-right: 0;
+}
+
+.nav-bg-custom {
+  background-color: #444444;
+  border-top: #323232 2px solid;
+}
+
+.btn-cust {
+  width: 10vw;
+  height: 4vh;
+  border: #323232 2px solid;
+  color: #323232;
+  background-color: #a9a9a9;
+  border-radius: 7%;
+}
+
+.btn-cust:hover {
+  color: #a9a9a9;
+  border: #a9a9a9 2px solid;
+  background-color: #323232;
+}
+
+.btn-cust:focus {
+  color: #a9a9a9;
+  background-color: #323232;
+}
+
+.logo {
+  max-width: 20px;
+}

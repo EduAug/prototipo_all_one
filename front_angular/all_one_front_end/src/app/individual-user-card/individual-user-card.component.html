@@ -1,0 +1,10 @@
+<div class="user-card" (click)="onCardClick()">
+  <div class="user-info">
+    <h3>{{ user.displayName }}</h3>
+    <p>City: {{ city }}</p>
+    <p>Matching Topics:</p>
+    <ul>
+      <li *ngFor="let topic of user.matchingTopics">{{ topic }}</li>
+    </ul>
+  </div>
+</div>

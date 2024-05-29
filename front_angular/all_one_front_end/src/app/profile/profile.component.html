@@ -1,0 +1,40 @@
+<div>
+  <label for="displayName">Display Name:</label>
+  <input type="text" id="displayName" [(ngModel)]="profileData.displayName" [readonly]="!isEditable">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="profileData.email" [readonly]="!isEditable">
+
+  <label for="password">Password:</label>
+  <input type="{{ isEditable ? 'text' : 'password' }}" id="password" [(ngModel)]="profileData.password" [readonly]="!isEditable">
+
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" [(ngModel)]="birthDate" [readonly]="!isEditable">
+
+  <div>
+    <label for="fullAddress">Location:</label>
+    <span id="fullAddress">{{ fullAddress }}</span>
+    <button (click)="getUserLocation($event)" [disabled]="!isEditable">Get current location</button>
+  </div>
+</div>
+
+
+<div>
+  <label>Subscribed Topics:</label>
+  <select multiple [(ngModel)]="selectedTopics" readonly>
+    <option *ngFor="let topic of topics" [value]="topic.id" (click)="isEditable ? removeTopic(topic.id) : null">
+      {{ topic.topicName }}
+    </option>
+  </select>
+</div>
+
+
+<div *ngIf="isEditable">
+  <button (click)="confirmChanges()">Confirm Changes</button>
+  <button (click)="cancelChanges()">Cancel</button>
+  <button (click)="openDeleteConfirm()">Delete Account</button>
+</div>
+
+<button (click)="confirmPassword()">Edit Profile</button>
+
+<app-footer></app-footer>

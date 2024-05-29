@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 splash-container">
+      <img src="../../assets/background-but-just-the-corners-now-definitely-transparent.png" class="img-1">
+      <img src="../../assets/background-image-landing.jpg" class="img-2">
+    </div>
+    <div class="col-md-4">
+      <div class="login-container">
+
+        <div class="row align-items-end m-5 pt-5 pb-5">
+          <img src="../../assets/ALL ONE LOGO.png" alt="Logo" class="logo">
+          <h1 class="h1 text-end">
+            <span class="text-colors">ALL </span>
+            <span class="text-colors2">ONE</span>
+          </h1>
+
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+        <form class="login-form row mb-4" (ngSubmit)="login()">
+          <div class="col-md-6">
+            <input type="text" placeholder="Displayname " class="form-control mb-3 mt-2" [(ngModel)]="this.UserName" [ngClass]="{ ' is-invalid bg-dangerlesser ' : loginFailed }" name="username" required>
+            <input type="password" placeholder="Password" class="form-control" [(ngModel)]="this.Password" [ngClass]="{ ' is-invalid bg-dangerlesser ' : loginFailed }" name="password" required="">
+          </div>
+          <div class="col-md-6 d-flex align-items-end justify-content-center">
+            <button type="submit" class="btn btn-dark" [disabled]="!UserName && !Password">
+              <i class="bi bi-arrow-bar-right"></i>
+            </button>
+          </div>
+        </form>
+        <hr class="border-light mt-5 mb-5">
+
+        <p class="signup-link pb-5">Don't have an account? <a class="font-weight-bold" routerLink="/signup">Sign Up</a></p>
+
+      </div>
+    </div>
+  </div>
+</div>

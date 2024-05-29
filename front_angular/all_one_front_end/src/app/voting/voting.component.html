@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Top 5 Most Popular Topics</h1>
+  <ul>
+    <li *ngFor="let topic of topApprovedTopics">
+      {{ topic.name }} - {{ topic.subscribers }} total subscriber(s)
+    </li>
+  </ul>
+
+  <h2>Didn't find something you're interested in?<br>Suggest a New Topic</h2>
+  <input type="text" [(ngModel)]="informedTopic" placeholder="Suggest a topic!" />
+  <button (click)="suggestTopic()">Suggest</button>
+  <div *ngIf="msg">{{ msg }}</div>
+
+  <h2>Curious if someone has already suggested a topic?<br>Search for suggestions by name</h2>
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search for topics being polled" />
+  <button (click)="searchUnapprovedTopics()">Search</button>
+
+  <h2>Vote for these! <br>Most popular suggestions so far!</h2>
+  <ul *ngIf="unapprovedTopics.length> 0; else noTopics">
+    <li *ngFor="let topic of unapprovedTopics">
+      {{ topic.name }} - {{ topic.votes }} vote(s)
+      <button (click)="voteForTopic(topic)">Vote</button>
+    </li>
+  </ul>
+  <ng-template #noTopics>
+    <h3>Looks like we've got nothing to vote.<br>How about starting your own?</h3>
+  </ng-template>
+</div>
+
+<app-footer></app-footer>
