@@ -1,13 +1,13 @@
 <div class="centerpiece border-dark rounded-top rounded-1">
-  <h2 class="mt-2 ml-3">Hello user {{ displayName }}</h2>
+  <!-- <h1 class="mt-2 ml-3">Hello, {{ displayName }}</h1> -->
 
   <div class="container mt-3">
     <div class="row">
       <div class="col-md-4">
         <div *ngIf="friends.length > 0">
-          <h2>Friends / Acquaintances</h2>
+          <h2>Your contacts</h2>
           <ul class="list-group">
-            <li class="list-group-item" *ngFor="let friend of friends" (click)="openChatWithFriend(friend)">
+            <li class="list-group-item mb-1" *ngFor="let friend of friends" (click)="openChatWithFriend(friend)">
               {{ friend.displayName }}
             </li>
           </ul>
@@ -20,15 +20,15 @@
         <div class="chat-messages" #messagesCont>
           <div *ngFor="let message of chatMessages" [ngClass]="message.senderId.toString() === currentChattingId.toString() ? 'other-message rounded p-2' : 'own-message rounded p-2'">
             <span [ngClass]="message.senderId.toString() !== currentChattingId.toString() ? 'border-bottom border-white' : 'border-bottom border-dark' ">
-              <b>{{ message.senderId.toString() === currentChattingId.toString() ? currentChattingDName : displayName }}</b>
+              <b>{{ message.senderId.toString() === currentChattingId.toString() ? currentChattingDName : displayName }} :</b>
             </span>
             <p>{{ message.messageText }}</p>
           </div>
         </div>
-        <div class="input-group mt-3 bottom-fix">
+        <div class="input-group bottom-fix">
           <input (keydown.enter)="sendMessage(messageInput)" type="text" class="form-control" placeholder="Type a message..." aria-label="Type a message..." [(ngModel)]="messageInput">
           <div class="input-group-append">
-            <button class="btn btn-primary" type="button" (click)="sendMessage(messageInput)">Send</button>
+            <button class="btn btn-cus3" type="button" (click)="sendMessage(messageInput)">Send</button>
           </div>
         </div>
       </div>

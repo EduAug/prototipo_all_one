@@ -1,0 +1,29 @@
+.address {
+  color: #d9d9d9;
+}
+
+.btn-cust2 {
+  padding: 6px;
+  background-color: #d9d9d9;
+  color: #737373;
+  border: 3px #737373 solid;
+  border-radius: 5%;
+}
+
+.btn-cust2:hover {
+  padding: 6px;
+  background-color: #737373;
+  color: #d9d9d9;
+  border: 3px #d9d9d9 solid;
+  border-radius: 5%;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.img-cont img {
+  height: 100vh;
+  width: 100%;
+  background-color: #d9d9d9;
+}

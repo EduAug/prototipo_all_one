@@ -1,0 +1,71 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actions button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.actions .confirm-change:hover {
+  border: 1px solid rgb(9, 92, 9);
+  color:rgb(9, 92, 9);
+  background-color: rgb(138, 199, 48);
+}
+
+.actions .cancel-change:hover {
+  border: 1px solid black;
+  color: black;
+}
+
+.actions .delete-change:hover {
+  border: 1px solid darkred;
+  color: darkred;
+  background-color: lightcoral;
+}
+
+.centerpiece {
+  background-color: #444444;
+  width: 80%;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.centerpiece button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #555555;
+  color: white;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.centerpiece button:hover {
+  background-color: #666666;
+}
+
+.centerpiece label {
+  display: block;
+  margin-top: 10px;
+}
+
+.centerpiece input,
+.centerpiece select,
+.centerpiece span {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

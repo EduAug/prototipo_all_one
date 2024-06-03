@@ -1,20 +1,50 @@
-<form #formRef="ngForm" (ngSubmit)="create()">
-  <input type="text" name="display" placeholder="Display Name" required [(ngModel)]="display">
-  <input type="email" name="mail" placeholder="E-mail" required [(ngModel)]="email">
-  <input type="password" name="passwd" placeholder="Password" required [(ngModel)]="password">
-  <input type="date" name="birthday" placeholder="Your birthday" required [(ngModel)]="birthday">
-  <button (click)="getUserLocation($event)">Get Location</button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 img-cont">
+      <img src="../../assets/background-but-just-the-corners-for-the-create.png" alt="our logos">
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5 mt-5">
+      <h1 class="text-center text-light mb-5">SIGN UP AND GET ON RIGHT AWAY!</h1>
+      <form #formRef="ngForm" (ngSubmit)="create()" class="mt-4">
+        <div class="pt-3 mb-4">
+          <input type="text" class="form-control" name="display" placeholder="Display Name" required [(ngModel)]="display">
+        </div>
+        <div class="mb-4">
+          <input type="email" class="form-control" name="mail" placeholder="E-mail" required [(ngModel)]="email">
+        </div>
+        <div class="mb-4">
+          <input type="password" class="form-control" name="passwd" placeholder="Password" required [(ngModel)]="password">
+        </div>
+        <div class="mb-4">
+          <input type="date" class="form-control" name="birthday" placeholder="Your birthday" required [(ngModel)]="birthday">
+        </div>
+        <div class="mb-4">
+          <input type="text" class="form-control" name="topicName" placeholder="Look for a topic name" [(ngModel)]="topicName" (keydown)="fetchMatchingTopics()">
 
-  <button type="button" [disabled]="!formRef.valid || !fullAddress" (click)="create()">Create Account</button>
-</form>
-
-<input type="text" [(ngModel)]="topicName" (keyup)="fetchMatchingTopics()">
-<select (change)="selectTopic($event)">
-  <option value="" disabled selected>Select a topic</option>
-  <option *ngFor="let topic of matchingTopics" [value]="topic.id">{{ topic.name }}</option>
-</select>
-
-
-<div *ngIf="fullAddress">
-  {{ fullAddress }}
+          <select class="form-control" (change)="selectTopic($event)">
+            <option *ngIf="matchingTopics.length === 0" value="" disabled selected>Select a topic</option>
+            <option *ngFor="let topic of matchingTopics" [value]="topic.id">{{ topic.name }}</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <div class="mb-3">
+              <button class="btn btn-cust2" (click)="getUserLocation($event)">Get Location</button>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="mb-3 address text-center p-1" *ngIf="fullAddress">
+              <h4>You're from <b>{{ fullAddress }}</b>? Neat.</h4>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 text-center">
+          <button type="button" class="btn btn-cust2" [disabled]="!formRef.valid || !fullAddress" (click)="create()">Create Account</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>

@@ -74,6 +74,7 @@ export class CreateAccountComponent {
             console.log('Matching topics:', this.matchingTopics);
           });
       } else {
+        console.log("Something wrong with topicName.");
         this.matchingTopics = [];
       }
     }, 500);
