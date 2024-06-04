@@ -4,28 +4,37 @@
     <div class="col-md-10">
       <div>
         <label for="displayName">Display Name:</label>
-        <input type="text" id="displayName" [(ngModel)]="profileData.displayName" [readonly]="!isEditable">
+        <input [ngClass]="!isEditable ? 'bg-secondary border-dark' : 'bg-white'" type="text" id="displayName" [(ngModel)]="profileData.displayName" [readonly]="!isEditable">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" [(ngModel)]="profileData.email" [readonly]="!isEditable">
+        <input [ngClass]="!isEditable ? 'bg-secondary border-dark' : 'bg-white'" type="email" id="email" [(ngModel)]="profileData.email" [readonly]="!isEditable">
 
         <label for="password">Password:</label>
-        <input type="{{ isEditable ? 'text' : 'password' }}" id="password" [(ngModel)]="profileData.password" [readonly]="!isEditable">
+        <input [ngClass]="!isEditable ? 'bg-secondary border-dark' : 'bg-white'" type="{{ isEditable ? 'text' : 'password' }}" id="password" [(ngModel)]="profileData.password" [readonly]="!isEditable">
 
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" [(ngModel)]="birthDate" [readonly]="!isEditable">
-
-        <div>
-          <label for="fullAddress">Location:</label>
-          <span id="fullAddress">{{ fullAddress }}</span>
-          <button class="ml-3" (click)="getUserLocation($event)" [disabled]="!isEditable">Get current location</button>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="birthday">Birthday:</label>
+            <input [ngClass]="!isEditable ? 'bg-secondary border-dark mt-3' : 'bg-white mt-3'" type="date" id="birthday" [(ngModel)]="birthDate" [readonly]="!isEditable">
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-6">
+            <label for="fullAddress">Location:</label>
+            <span class="text-dark" id="fullAddress">{{ fullAddress }}</span>
+            <button class="ml-3" (click)="getUserLocation($event)" [disabled]="!isEditable">Get current location</button>
+          </div>
         </div>
       </div>
 
       <div>
-        <label *ngIf="!isEditable">Subscribed Topics:</label>
-        <label *ngIf="isEditable">Unsubscribe from topic:</label>
-        <select multiple [(ngModel)]="selectedTopics" readonly>
+        <div *ngIf="!isEditable; else unsub_lab">
+          <label>Subscribed Topics:</label>
+        </div>
+        <ng-template #unsub_lab>
+          <label>Unsubscribe from topic:</label>
+        </ng-template>
+
+        <select multiple [(ngModel)]="selectedTopics" [ngClass]="!isEditable ? 'bg-secondary border-dark' : 'bg-white'" readonly>
           <option *ngFor="let topic of topics" [value]="topic.id" (click)="isEditable ? removeTopic(topic.id) : null">
             {{ topic.topicName }}
           </option>
