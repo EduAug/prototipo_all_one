@@ -1,9 +1,9 @@
 <div class="user-card" (click)="onCardClick()">
-  <div class="user-info">
-    <h3>{{ user.displayName }}</h3>
-    <p>City: {{ city }}</p>
+  <div class="user-info mb-3">
+    <h3 class="user-display-name">{{ user.displayName }}</h3>
+    <p class="user-city">City: {{ city }}</p>
     <p>Matching Topics:</p>
-    <ul>
+    <ul class="topics-list">
       <li *ngFor="let topic of user.matchingTopics">{{ topic }}</li>
     </ul>
   </div>

@@ -1,30 +1,62 @@
-<div class="container">
-  <h1>Top 5 Most Popular Topics</h1>
-  <ul>
-    <li *ngFor="let topic of topApprovedTopics">
-      {{ topic.name }} - {{ topic.subscribers }} total subscriber(s)
-    </li>
-  </ul>
-
-  <h2>Didn't find something you're interested in?<br>Suggest a New Topic</h2>
-  <input type="text" [(ngModel)]="informedTopic" placeholder="Suggest a topic!" />
-  <button (click)="suggestTopic()">Suggest</button>
-  <div *ngIf="msg">{{ msg }}</div>
-
-  <h2>Curious if someone has already suggested a topic?<br>Search for suggestions by name</h2>
-  <input type="text" [(ngModel)]="searchQuery" placeholder="Search for topics being polled" />
-  <button (click)="searchUnapprovedTopics()">Search</button>
-
-  <h2>Vote for these! <br>Most popular suggestions so far!</h2>
-  <ul *ngIf="unapprovedTopics.length> 0; else noTopics">
-    <li *ngFor="let topic of unapprovedTopics">
-      {{ topic.name }} - {{ topic.votes }} vote(s)
-      <button (click)="voteForTopic(topic)">Vote</button>
-    </li>
-  </ul>
-  <ng-template #noTopics>
-    <h3>Looks like we've got nothing to vote.<br>How about starting your own?</h3>
-  </ng-template>
+<div class="centerpiece container">
+  <div class="cont-cont">
+    <h1 class="mb-4">Current 5 most popular topics</h1>
+    <div class="popular-topics text-center m-3">
+      <ul>
+        <li *ngFor="let topic of topApprovedTopics">
+          {{ topic.name }} - {{ topic.subscribers }} total subscriber(s)
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="cont-cont">
+        <h1>Didn't find something you're interested in?</h1>
+        <h2>Suggest a New Topic</h2>
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="informedTopic" placeholder="Suggest a topic!" />
+          <div class="input-group-append">
+            <button class="btn btn-cus3 suggest-btn" (click)="suggestTopic()">Suggest</button>
+          </div>
+        </div>
+        <div *ngIf="msg">{{ msg }}</div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="cont-cont">
+        <h1>Curious if someone has already suggested a topic?</h1>
+        <h2>Search for suggestions by name</h2>
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search for topics being polled" />
+          <div class="input-group-append">
+            <button class="btn btn-cus3" (click)="searchUnapprovedTopics()">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="col-md-3"></div>
+  </div>
+  <div class="cont-cont row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1>Vote for these! <br>Most popular suggestions!</h1>
+      <ul class="text-center vote-topics" *ngIf="unapprovedTopics.length> 0; else noTopics">
+        <li *ngFor="let topic of unapprovedTopics">
+          {{ topic.name }} - {{ topic.votes }} vote(s)
+          <button class="btn btn-cus3" (click)="voteForTopic(topic)">Vote</button>
+        </li>
+      </ul>
+      <ng-template #noTopics>
+        <h3>Looks like we've got nothing to vote for.<br><b>How about starting your own?</b></h3>
+      </ng-template>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
-
 <app-footer></app-footer>

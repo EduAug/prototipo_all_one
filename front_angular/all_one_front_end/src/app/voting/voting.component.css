@@ -1,0 +1,70 @@
+.centerpiece {
+  background-color: #444444;
+  width: 80%;
+  height: calc(100vh - 50px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  padding: 20px;
+  color: gainsboro;
+  overflow-y: auto;
+}
+
+.centerpiece h1,h2{
+  text-align: center;
+}
+
+.cont-cont{
+  margin-bottom: 7vh;
+}
+
+.popular-topics ul {
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+button {
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 2px solid #323232;
+  background-color: #a9a9a9;
+  color: #323232;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #323232;
+  color: #a9a9a9;
+  border-color: #a9a9a9;
+}
+
+h3 {
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 1px solid #a9a9a9;
+}
+
+li{
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.vote-topics button{
+  font-size: 0.8em;
+}
+
+.input-group .form-control:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.input-group .input-group-append button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

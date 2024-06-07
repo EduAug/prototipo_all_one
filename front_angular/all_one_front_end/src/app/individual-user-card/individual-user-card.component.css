@@ -1,5 +1,5 @@
 .user-card {
-  background-color: #b9b9b9;
+  background-color: #a9a9a9;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
@@ -8,4 +8,27 @@
 
 .user-card:hover {
   background-color: #e0e0e0;
+  li {
+    background-color: #e0e0e0;
+  }
+}
+
+.user-display-name, .user-city {
+  font-weight: bold;
+}
+
+.topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topics-list li {
+  background-color: #a9a9a9;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #323232;
+  border-radius: 5px;
 }

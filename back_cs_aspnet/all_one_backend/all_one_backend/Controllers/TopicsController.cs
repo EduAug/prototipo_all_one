@@ -147,17 +147,25 @@ namespace all_one_backend.Controllers
 
             if(!string.IsNullOrWhiteSpace(queriedTopic))
             {
+                var treatedQuery = Regex.Replace(queriedTopic, "[^a-zA-Z0-9]", "").ToUpper();
                 var matchingUnapprovedTopics = await _context.Topics
                     .Where(
                         t => t.TotalVotes < 1000 &&
-                        Regex.Replace(t.TopicName, "[^a-zA-Z0-9]", "").ToUpper().Contains(Regex.Replace(queriedTopic, "[^a-zA-Z0-9]", "").ToUpper()) &&
                         !userVotedTopicIds.Contains(t.Id)
                         )
                     .OrderByDescending(t => t.TotalVotes)
-                    .Select(t => new { Id = t.Id, Name = t.TopicName, Votes = t.TotalVotes  })
                     .ToListAsync();
 
-                return Ok(matchingUnapprovedTopics);
+                var returnTopics = matchingUnapprovedTopics
+                    .Where(t => Regex.Replace(t.TopicName, "[^a-zA-Z0-9]", "").ToUpper().Contains(treatedQuery))
+                    .Select(t => new { 
+                        Id = t.Id, 
+                        Name = t.TopicName, 
+                        Votes = t.TotalVotes 
+                    })
+                    .ToList();
+
+                return Ok(returnTopics);
             }
             else
             {
