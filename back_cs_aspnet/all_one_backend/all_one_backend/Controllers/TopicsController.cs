@@ -74,7 +74,7 @@ namespace all_one_backend.Controllers
             if (user.Topics.Any(t => t.Id == topicId)) return BadRequest($"User already subscribed to {topic.TopicName}");
 
             user.Topics.Add(topic);
-            topic.Subscribers = topic.Users.Count;
+            topic.Subscribers++;
 
             _context.SaveChanges();
 

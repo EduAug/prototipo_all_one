@@ -22,14 +22,13 @@ public partial class AllOneDatabContext : DbContext
     public virtual DbSet<Vote> Votes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("Server=localhost;Port=3630;Database=all_one_datab;Uid=root;Pwd=pwd_for_userdt@;");
+        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=sqls_users_all_one;User Id=sa;Password=pwd_for_userdt@SQLS;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Topic>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
+            entity.HasKey(e => e.Id);
 
             entity.ToTable("Topic");
 
@@ -39,7 +38,7 @@ public partial class AllOneDatabContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PRIMARY");
+            entity.HasKey(e => e.Id);
 
             entity.ToTable("User");
 
@@ -56,15 +55,13 @@ public partial class AllOneDatabContext : DbContext
                     "Friend",
                     r => r.HasOne<User>().WithMany()
                         .HasForeignKey("FriendId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("Friends_ibfk_2"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("Friends_ibfk_1"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     j =>
                     {
-                        j.HasKey("UserId", "FriendId").HasName("PRIMARY");
+                        j.HasKey("UserId", "FriendId");
                         j.ToTable("Friends");
                         j.HasIndex(new[] { "FriendId" }, "FriendID");
                         j.IndexerProperty<int>("UserId").HasColumnName("UserID");
@@ -76,15 +73,13 @@ public partial class AllOneDatabContext : DbContext
                     "UserTopic",
                     r => r.HasOne<Topic>().WithMany()
                         .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("UserTopics_ibfk_2"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("UserTopics_ibfk_1"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     j =>
                     {
-                        j.HasKey("UserId", "TopicId").HasName("PRIMARY");
+                        j.HasKey("UserId", "TopicId");
                         j.ToTable("UserTopics");
                         j.HasIndex(new[] { "TopicId" }, "TopicID");
                         j.IndexerProperty<int>("UserId").HasColumnName("UserID");
@@ -96,15 +91,13 @@ public partial class AllOneDatabContext : DbContext
                     "Friend",
                     r => r.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("Friends_ibfk_1"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("FriendId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("Friends_ibfk_2"),
+                        .OnDelete(DeleteBehavior.ClientSetNull),
                     j =>
                     {
-                        j.HasKey("UserId", "FriendId").HasName("PRIMARY");
+                        j.HasKey("UserId", "FriendId");
                         j.ToTable("Friends");
                         j.HasIndex(new[] { "FriendId" }, "FriendID");
                         j.IndexerProperty<int>("UserId").HasColumnName("UserID");
@@ -120,14 +113,12 @@ public partial class AllOneDatabContext : DbContext
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Votes)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Votes_ibfk_1");
+                    .OnDelete(DeleteBehavior.ClientSetNull);
 
                 entity.HasOne(d => d.Topic)
                     .WithMany(p => p.Votes)
                     .HasForeignKey(d => d.TopicId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Votes_ibfk_2");
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
         OnModelCreatingPartial(modelBuilder);
     }

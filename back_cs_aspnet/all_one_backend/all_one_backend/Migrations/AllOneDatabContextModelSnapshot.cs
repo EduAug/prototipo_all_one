@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using all_one_backend.Models;
 
@@ -17,7 +18,9 @@ namespace all_one_backend.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.17")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Friend", b =>
                 {
@@ -29,8 +32,7 @@ namespace all_one_backend.Migrations
                         .HasColumnType("int")
                         .HasColumnName("FriendID");
 
-                    b.HasKey("UserId", "FriendId")
-                        .HasName("PRIMARY");
+                    b.HasKey("UserId", "FriendId");
 
                     b.HasIndex(new[] { "FriendId" }, "FriendID");
 
@@ -47,8 +49,7 @@ namespace all_one_backend.Migrations
                         .HasColumnType("int")
                         .HasColumnName("TopicID");
 
-                    b.HasKey("UserId", "TopicId")
-                        .HasName("PRIMARY");
+                    b.HasKey("UserId", "TopicId");
 
                     b.HasIndex(new[] { "TopicId" }, "TopicID");
 
@@ -62,19 +63,20 @@ namespace all_one_backend.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("Subscribers")
                         .HasColumnType("int");
 
                     b.Property<string>("TopicName")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("TotalVotes")
                         .HasColumnType("int");
 
-                    b.HasKey("Id")
-                        .HasName("PRIMARY");
+                    b.HasKey("Id");
 
                     b.ToTable("Topic", (string)null);
                 });
@@ -86,18 +88,20 @@ namespace all_one_backend.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime");
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<decimal?>("Latitude")
                         .HasPrecision(10, 8)
@@ -110,10 +114,9 @@ namespace all_one_backend.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("Id")
-                        .HasName("PRIMARY");
+                    b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
                 });
@@ -141,14 +144,12 @@ namespace all_one_backend.Migrations
                     b.HasOne("all_one_backend.Models.User", null)
                         .WithMany()
                         .HasForeignKey("FriendId")
-                        .IsRequired()
-                        .HasConstraintName("Friends_ibfk_2");
+                        .IsRequired();
 
                     b.HasOne("all_one_backend.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("Friends_ibfk_1");
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("UserTopic", b =>
@@ -156,14 +157,12 @@ namespace all_one_backend.Migrations
                     b.HasOne("all_one_backend.Models.Topic", null)
                         .WithMany()
                         .HasForeignKey("TopicId")
-                        .IsRequired()
-                        .HasConstraintName("UserTopics_ibfk_2");
+                        .IsRequired();
 
                     b.HasOne("all_one_backend.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("UserTopics_ibfk_1");
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("all_one_backend.Models.Vote", b =>
@@ -171,14 +170,12 @@ namespace all_one_backend.Migrations
                     b.HasOne("all_one_backend.Models.Topic", "Topic")
                         .WithMany("Votes")
                         .HasForeignKey("TopicId")
-                        .IsRequired()
-                        .HasConstraintName("Votes_ibfk_2");
+                        .IsRequired();
 
                     b.HasOne("all_one_backend.Models.User", "User")
                         .WithMany("Votes")
                         .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("Votes_ibfk_1");
+                        .IsRequired();
 
                     b.Navigation("Topic");
 
