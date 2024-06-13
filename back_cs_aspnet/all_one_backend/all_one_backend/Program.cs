@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AllOneDatabContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddSingleton<CassandraDAO>();
+//builder.Services.AddSingleton<CassandraDAO>();
 builder.Services.AddSingleton<IJwtHandler, JwtHandler>();
 
 builder.Services.AddControllers();

@@ -17,6 +17,9 @@
         </div>
       </div>
       <div class="col-md-8" *ngIf="currentChattingId != null">
+        <div class="chat-header p-2 bg-white text-dark">
+          <h3 class="m-0">{{ currentChattingDName }}</h3>
+        </div>
         <div class="chat-messages" #messagesCont>
           <div *ngFor="let message of chatMessages" [ngClass]="message.senderId.toString() === currentChattingId.toString() ? 'other-message rounded p-2' : 'own-message rounded p-2'">
             <span [ngClass]="message.senderId.toString() !== currentChattingId.toString() ? 'border-bottom border-white' : 'border-bottom border-dark' ">

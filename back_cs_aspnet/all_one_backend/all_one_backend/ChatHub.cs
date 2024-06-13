@@ -77,5 +77,17 @@ namespace all_one_backend
 
             await Clients.Group(groupName).SendAsync("ReceiveMessage", fromUserId, message);
         }
+
+        public async Task DeleteGroup(string groupName)
+        {
+            if (_groupMesssages.ContainsKey(groupName))
+            {
+                await Clients.Group(groupName).SendAsync("Group Removed! It seems your friend deleted their account");
+                _groupMesssages.Remove(groupName);
+            } else
+            {
+                Console.WriteLine($"It seems as if {groupName} doesn't exist... How quaint");
+            }
+        }
     }
 }

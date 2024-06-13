@@ -23,6 +23,14 @@
   color: gainsboro;
 }
 
+.chat-header {
+  background-color: #323232;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+
 .chat-messages {
   max-height: 75vh;
   overflow-y: auto;

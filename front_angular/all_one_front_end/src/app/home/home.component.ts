@@ -22,7 +22,10 @@ export class HomeComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('messagesCont') private messagesContainer?: ElementRef;
 
-  constructor(private auths : AuthService,private http : HttpClient){}
+  constructor(
+    private auths : AuthService,
+    private http : HttpClient
+  ){}
 
   ngAfterViewChecked(): void {
     if (this.messagesContainer) {
@@ -41,6 +44,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.messageSubs = this.chats.receiveMessage().subscribe(msg => {
           this.chatMessages.push({ senderId: msg.fromUserId, messageText: msg.message});
         });
+
       },
         error: (err) => { console.error("Error decoding token:", err); }
       });
@@ -49,32 +53,43 @@ export class HomeComponent implements OnInit, AfterViewChecked {
     this.fetchFriends();
 
     this.fetchFriendSubs = setInterval(() => {
-      this.fetchFriends();
-    }, 1 * 60 * 1000);
+      this.fetchFriends().then(()=> {
+        let flagFriend = this.friends.some(f=> this.currentChattingId == f.id);
+        if(!flagFriend){
+          this.currentChattingId = null;
+        }
+      }).catch(er=>{console.error("Error fetching friends /Checking: ",er )});
+    }, 1 * 30 * 1000);
   }
 
   ngOnDestroy(): void{
     clearInterval(this.fetchFriendSubs);
+    if(this.messageSubs){
+      this.messageSubs.unsubscribe;
+    }
   }
 
-  fetchFriends(): void{
-    const token = sessionStorage.getItem('auth_token');
-    if (token){
-      this.auths.decodeToken(token).subscribe(
-        (data) => {
-          this.displayName = data.unique_name;
-          this.http.get<any>(`http://localhost:5164/users/friendsof/${data.nameid}`).subscribe({
-            next: (friends) => {
-              this.friends = friends;
-            },
-            error: (error) => {console.error("There was an error fetching friends: ", error);}
-          })
-        },
-        (error) => {
-          console.error('Error decoding token:', error);
-        }
-      );
-    }
+  fetchFriends(): Promise<void>{
+    return new Promise((resolve, reject)=> {
+      const token = sessionStorage.getItem('auth_token');
+      if (token){
+        this.auths.decodeToken(token).subscribe(
+          (data) => {
+            this.displayName = data.unique_name;
+            this.http.get<any>(`http://localhost:5164/users/friendsof/${data.nameid}`).subscribe({
+              next: (friends) => {
+                this.friends = friends;
+                resolve();
+              },
+              error: (error)=> {console.error("There was an error fetching friends: ", error);reject(error);}
+            });
+          },
+          (error)=> {console.error('Error decoding token:', error);reject(error);}
+        );
+      } else {
+        reject(new Error("No auth token found."));
+      }
+    });
   }
 
   fetchMessages(groupName: string): void{

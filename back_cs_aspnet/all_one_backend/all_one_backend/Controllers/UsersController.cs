@@ -12,14 +12,16 @@ namespace all_one_backend.Controllers
     public class UsersController : ControllerBase
     {
         private readonly AllOneDatabContext _context;
-        private readonly CassandraDAO _cassandraDAO;
+        //private readonly CassandraDAO _cassandraDAO;
         private readonly IJwtHandler _jwtHandler;
+        private readonly ChatHub _chub;
 
-        public UsersController(AllOneDatabContext context, CassandraDAO cassandraDAO, IJwtHandler jwtHandler)
+        public UsersController(AllOneDatabContext context, /*CassandraDAO cassandraDAO,*/ IJwtHandler jwtHandler, ChatHub chub)
         {
             _context = context;
-            _cassandraDAO = cassandraDAO;
+            //_cassandraDAO = cassandraDAO;
             _jwtHandler = jwtHandler;
+            _chub = chub;
         }
 
         [HttpGet("getAll")]
@@ -37,6 +39,7 @@ namespace all_one_backend.Controllers
                 var user = await _context.Users.Include(f => f.Friends).FirstOrDefaultAsync(u => u.Id == userId);
                 if(user == null) return NotFound("User not found.");
                 var foundFriends = user.Friends.Select(friend => new { Id = friend.Id, DisplayName = friend.DisplayName }).ToList();
+
                 return Ok(foundFriends);
             }
             catch (Exception E)
@@ -268,30 +271,57 @@ namespace all_one_backend.Controllers
         {
             try
             {
-                // Disable foreign key constraints
-                await _context.Database.ExecuteSqlRawAsync("SET FOREIGN_KEY_CHECKS = 0");
-
-                var userToDelete = await _context.Users.Include(f => f.Friends).Include(t => t.Topics).FirstOrDefaultAsync(u => u.Id == userId);
+                var userToDelete = await _context.Users
+                    .Include(f => f.Friends)
+                    .Include(t => t.Topics)
+                    .Include(v => v.Votes)
+                    .FirstOrDefaultAsync(u => u.Id == userId);
                 if (userToDelete == null) return NotFound("User not found");
 
+                foreach(var friend in userToDelete.Friends)
+                {
+                    int firstUserId = Math.Min(userId, friend.Id);
+                    int secondUserId = Math.Max(userId, friend.Id);
+
+                    var groupName = $"{firstUserId} || {secondUserId}";
+
+                    await _chub.DeleteGroup(groupName);
+                }
+
+                var isFriendsWithUser = await _context.Users
+                    .Include(f => f.Friends)
+                    .Where(u => u.Friends.Any(f => f.Id == userId))
+                    .ToListAsync();
+                foreach(var friend in isFriendsWithUser)
+                {
+                    friend.Friends.Remove(userToDelete);
+                }
                 foreach (var friend in userToDelete.Friends)
                 {
                     friend.Users.Remove(userToDelete);
                 }
 
-                foreach (var topic in userToDelete.Topics)
+                var isTopicUserFollow = await _context.Topics
+                    .Include(t=> t.Users)
+                    .Where(t=> t.Users.Any(f => f.Id == userId))
+                    .ToListAsync();
+                foreach(var topic in isTopicUserFollow)
                 {
                     topic.Users.Remove(userToDelete);
                 }
 
-                await _context.SaveChangesAsync();
+                var votesWithUser = await _context.Votes
+                    .Where(v=> v.UserId == userId)
+                    .ToListAsync();
+                foreach (var vote in votesWithUser)
+                {
+                    _context.Votes.Remove(vote);
+                }
 
+                await _context.SaveChangesAsync();
+                
                 _context.Users.Remove(userToDelete);
-
                 await _context.SaveChangesAsync();
-
-                // Re-enable foreign key constraints
-                await _context.Database.ExecuteSqlRawAsync("SET FOREIGN_KEY_CHECKS = 1");
 
                 return Ok("Goodbye user!");
             }

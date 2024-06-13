@@ -71,6 +71,7 @@ export class CreateAccountComponent {
         this.http.get<any[]>('http://localhost:5164/deeper/topics/byName?thisTopicName=' + this.topicName)
           .subscribe(data => {
             this.matchingTopics = data.map(topic => ({ id: topic.id, name: topic.name }));
+            this.matchingTopics.unshift({id: -1, name: "Select a topic"});
             console.log('Matching topics:', this.matchingTopics);
           });
       } else {
