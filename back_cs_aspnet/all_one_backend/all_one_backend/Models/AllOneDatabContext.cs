@@ -20,10 +20,7 @@ public partial class AllOneDatabContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<Vote> Votes { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=sqls_users_all_one;User Id=sa;Password=pwd_for_userdt@SQLS;TrustServerCertificate=true;");
-
+  
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Topic>(entity =>
