@@ -26,7 +26,7 @@ export class FindusersComponent {
       this.auths.decodeToken(token).subscribe(
         (data: any) => {
           const userId = data.nameid;
-          this.http.get<any[]>(`http://localhost:5164/users/findUsers?userId=${userId}&maxDistance=${this.selectedDistance}`)
+          this.http.get<any[]>(`http://redeallone.somee.com/users/findUsers?userId=${userId}&maxDistance=${this.selectedDistance}`)
             .subscribe(
               (users) => {
                 this.users = users;
@@ -48,7 +48,7 @@ export class FindusersComponent {
         (data: any) =>{
           const userId = parseInt(data.nameid);
           const uIds = { user1Id: userId, user2Id: clcikedUserId};
-          this.http.post(`http://localhost:5164/users/addFriend`,uIds,{ responseType:'text' })
+          this.http.post(`http://redeallone.somee.com/users/addFriend`,uIds,{ responseType:'text' })
             .subscribe(
               (response)=>{
                 console.log(response);

@@ -5,9 +5,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfsTbGZWxCUSyF+TQQKXG3QAAAAACAAAAAAAQZgAAAAEAACAAAABgh/HCvpn4Tx5Sq2GPcg9lqKIg1ya4CiLWWRgoI5md4QAAAAAOgAAAAAIAACAAAAAANzqMpuE5lH0OQyxlCckjm8iG+x1ya1EAAKI1dMcpHyAAAAAfws/hjXpiq6jtMBuYVUnWbJs+tXzyVlqgybGCgZ48I0AAAAD0escvpOmIqB2WTsNFt39NeXb3nOszavzzxgI0YQxzyFV57fhuK8gz7OwShouk+n9zEx/nlCZUZVi7xcFy7EL7</EncryptedPassword>
-    <_PublishTargetUrl>ftp://allonerede.somee.com/www.allonerede.somee.com</_PublishTargetUrl>
-    <History>True|2024-06-13T18:17:55.1539616Z;True|2024-06-13T15:05:39.8112746-03:00;</History>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfsTbGZWxCUSyF+TQQKXG3QAAAAACAAAAAAAQZgAAAAEAACAAAABV2pT4JEV8uJzCcXUE7oG/GzbP4XnfVhEgprPFVIHhGAAAAAAOgAAAAAIAACAAAADZpxJ2mFIlh6tQ0JP+BiCCieDBVhrjVNUsRg7YdxE1MyAAAAB7YFnWvAzHjM9XXTSUeEH/mDX/jkpVn8p/214od88TrkAAAABtoh0NFXpdxFwHONMLPsF6esYVgshF9gqnUOAkVSEj/rRr2O4aKLDndsZOA2Y8lMoovYoFu6Ke07PV67mK669e</EncryptedPassword>
+    <_PublishTargetUrl>ftp://redeallone.somee.com/www.redeallone.somee.com</_PublishTargetUrl>
+    <History>True|2024-06-18T17:48:30.8470313Z;True|2024-06-18T14:38:31.8357055-03:00;True|2024-06-18T14:30:21.8746819-03:00;True|2024-06-18T13:43:27.3436349-03:00;True|2024-06-17T15:38:29.3143898-03:00;False|2024-06-17T15:26:31.2698651-03:00;True|2024-06-14T14:25:06.4999772-03:00;True|2024-06-14T11:17:45.4822026-03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -15,16 +15,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:06</publishTime>
     </File>
     <File Include="all_one_backend.deps.json">
-      <publishTime>06/13/2024 16:18:14</publishTime>
+      <publishTime>06/18/2024 14:42:11</publishTime>
     </File>
     <File Include="all_one_backend.dll">
-      <publishTime>06/13/2024 16:18:13</publishTime>
+      <publishTime>06/18/2024 14:42:11</publishTime>
     </File>
     <File Include="all_one_backend.exe">
-      <publishTime>06/13/2024 16:18:13</publishTime>
+      <publishTime>06/18/2024 14:42:11</publishTime>
     </File>
     <File Include="all_one_backend.pdb">
-      <publishTime>06/13/2024 16:18:13</publishTime>
+      <publishTime>06/18/2024 14:42:11</publishTime>
     </File>
     <File Include="all_one_backend.runtimeconfig.json">
       <publishTime>06/13/2024 14:50:03</publishTime>
@@ -33,7 +33,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/05/2024 19:05:11</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>06/13/2024 16:17:42</publishTime>
+      <publishTime>06/13/2024 16:30:24</publishTime>
     </File>
     <File Include="ar/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:06</publishTime>
@@ -42,7 +42,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:08</publishTime>
     </File>
     <File Include="Azure.Core.dll">
-      <publishTime>09/07/2023 14:50:30</publishTime>
+      <publishTime>07/09/2023 14:50:30</publishTime>
     </File>
     <File Include="Azure.Identity.dll">
       <publishTime>10/18/2023 16:59:42</publishTime>
@@ -57,31 +57,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/21/2023 09:06:40</publishTime>
     </File>
     <File Include="Cassandra.dll">
-      <publishTime>03/08/2024 12:01:20</publishTime>
+      <publishTime>08/03/2024 12:01:20</publishTime>
     </File>
     <File Include="cs/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:08</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:30</publishTime>
+      <publishTime>12/11/2022 01:10:30</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="cs/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="da/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:10</publishTime>
@@ -90,25 +90,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:10</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:30</publishTime>
+      <publishTime>12/11/2022 01:10:30</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="de/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>02/13/2024 01:16:06</publishTime>
@@ -120,25 +120,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:12</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:30</publishTime>
+      <publishTime>12/11/2022 01:10:30</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="es/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="fa/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:04</publishTime>
@@ -153,25 +153,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:08</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="fr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="Google.Protobuf.dll">
       <publishTime>11/15/2023 08:29:56</publishTime>
@@ -201,82 +201,82 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:12</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="it/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="ja/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:04</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="ja/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="K4os.Compression.LZ4.dll">
-      <publishTime>01/06/2023 14:16:12</publishTime>
+      <publishTime>06/01/2023 14:16:12</publishTime>
     </File>
     <File Include="K4os.Compression.LZ4.Streams.dll">
-      <publishTime>01/06/2023 14:16:12</publishTime>
+      <publishTime>06/01/2023 14:16:12</publishTime>
     </File>
     <File Include="K4os.Hash.xxHash.dll">
-      <publishTime>11/08/2022 15:08:14</publishTime>
+      <publishTime>08/11/2022 15:08:14</publishTime>
     </File>
     <File Include="ko-KR/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:06</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="ko/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="ku/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:06</publishTime>
@@ -297,46 +297,46 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/22/2021 20:47:36</publishTime>
     </File>
     <File Include="Microsoft.Build.dll">
-      <publishTime>09/12/2022 20:29:46</publishTime>
+      <publishTime>12/09/2022 20:29:46</publishTime>
     </File>
     <File Include="Microsoft.Build.Framework.dll">
-      <publishTime>09/12/2022 20:28:56</publishTime>
+      <publishTime>12/09/2022 20:28:56</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.AnalyzerUtilities.dll">
       <publishTime>06/06/2020 00:37:20</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>11/12/2022 01:10:30</publishTime>
+      <publishTime>12/11/2022 01:10:30</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Features.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Elfie.dll">
-      <publishTime>05/11/2022 11:49:42</publishTime>
+      <publishTime>11/05/2022 11:49:42</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Features.dll">
-      <publishTime>11/12/2022 01:12:20</publishTime>
+      <publishTime>12/11/2022 01:12:20</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Razor.dll">
       <publishTime>10/23/2022 19:37:32</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Scripting.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
       <publishTime>01/26/2024 23:49:44</publishTime>
     </File>
     <File Include="Microsoft.DiaSymReader.dll">
-      <publishTime>02/11/2022 23:19:46</publishTime>
+      <publishTime>11/02/2022 23:19:46</publishTime>
     </File>
     <File Include="Microsoft.DotNet.Scaffolding.Shared.dll">
       <publishTime>02/13/2024 01:15:56</publishTime>
@@ -354,31 +354,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/15/2024 15:03:50</publishTime>
     </File>
     <File Include="Microsoft.Identity.Client.dll">
-      <publishTime>09/05/2023 15:25:28</publishTime>
+      <publishTime>05/09/2023 15:25:28</publishTime>
     </File>
     <File Include="Microsoft.Identity.Client.Extensions.Msal.dll">
-      <publishTime>09/05/2023 15:31:58</publishTime>
+      <publishTime>05/09/2023 15:31:58</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Abstractions.dll">
-      <publishTime>04/05/2024 18:03:10</publishTime>
+      <publishTime>05/04/2024 18:03:10</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
-      <publishTime>04/05/2024 18:02:34</publishTime>
+      <publishTime>05/04/2024 18:02:34</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Logging.dll">
-      <publishTime>04/05/2024 18:02:54</publishTime>
+      <publishTime>05/04/2024 18:02:54</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Protocols.dll">
-      <publishTime>12/01/2023 01:37:28</publishTime>
+      <publishTime>01/12/2023 01:37:28</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
-      <publishTime>12/01/2023 01:48:08</publishTime>
+      <publishTime>01/12/2023 01:48:08</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Tokens.dll">
-      <publishTime>04/05/2024 18:02:54</publishTime>
+      <publishTime>05/04/2024 18:02:54</publishTime>
     </File>
     <File Include="Microsoft.NET.StringTools.dll">
-      <publishTime>09/12/2022 20:28:58</publishTime>
+      <publishTime>12/09/2022 20:28:58</publishTime>
     </File>
     <File Include="Microsoft.OpenApi.dll">
       <publishTime>09/26/2022 09:32:38</publishTime>
@@ -414,10 +414,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:08</publishTime>
     </File>
     <File Include="MySql.Data.dll">
-      <publishTime>12/08/2023 03:11:38</publishTime>
+      <publishTime>08/12/2023 03:11:38</publishTime>
     </File>
     <File Include="MySql.EntityFrameworkCore.dll">
-      <publishTime>12/08/2023 03:25:10</publishTime>
+      <publishTime>08/12/2023 03:25:10</publishTime>
     </File>
     <File Include="nb-NO/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:08</publishTime>
@@ -462,46 +462,46 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:10</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="pl/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:44</publishTime>
+      <publishTime>12/11/2022 01:10:44</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="pt/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:10</publishTime>
@@ -513,25 +513,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:06</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:46</publishTime>
+      <publishTime>12/11/2022 01:10:46</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="ru/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll">
       <publishTime>01/26/2024 23:49:42</publishTime>
@@ -540,31 +540,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/22/2021 20:51:42</publishTime>
     </File>
     <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>08/11/2023 15:56:28</publishTime>
+      <publishTime>11/08/2023 15:56:28</publishTime>
     </File>
     <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>08/11/2023 15:56:28</publishTime>
+      <publishTime>11/08/2023 15:56:28</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/comerr64.dll">
-      <publishTime>12/08/2023 03:05:06</publishTime>
+      <publishTime>08/12/2023 03:05:06</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/gssapi64.dll">
-      <publishTime>12/08/2023 03:05:06</publishTime>
+      <publishTime>08/12/2023 03:05:06</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/k5sprt64.dll">
-      <publishTime>12/08/2023 03:05:06</publishTime>
+      <publishTime>08/12/2023 03:05:06</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/krb5_64.dll">
-      <publishTime>12/08/2023 03:05:06</publishTime>
+      <publishTime>08/12/2023 03:05:06</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/krbcc64.dll">
-      <publishTime>12/08/2023 03:05:06</publishTime>
+      <publishTime>08/12/2023 03:05:06</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>08/11/2023 15:56:18</publishTime>
+      <publishTime>11/08/2023 15:56:18</publishTime>
     </File>
     <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>08/11/2023 15:56:18</publishTime>
+      <publishTime>11/08/2023 15:56:18</publishTime>
     </File>
     <File Include="runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll">
       <publishTime>01/26/2024 23:49:42</publishTime>
@@ -603,13 +603,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:08</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.Swagger.dll">
-      <publishTime>01/11/2023 03:48:22</publishTime>
+      <publishTime>11/01/2023 03:48:22</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
-      <publishTime>01/11/2023 03:48:26</publishTime>
+      <publishTime>11/01/2023 03:48:26</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
-      <publishTime>01/11/2023 03:49:02</publishTime>
+      <publishTime>11/01/2023 03:49:02</publishTime>
     </File>
     <File Include="System.CodeDom.dll">
       <publishTime>11/15/2019 05:36:56</publishTime>
@@ -636,13 +636,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/22/2021 20:49:12</publishTime>
     </File>
     <File Include="System.IdentityModel.Tokens.Jwt.dll">
-      <publishTime>04/05/2024 18:01:00</publishTime>
+      <publishTime>05/04/2024 18:01:00</publishTime>
     </File>
     <File Include="System.Management.dll">
       <publishTime>11/15/2019 05:37:24</publishTime>
     </File>
     <File Include="System.Memory.Data.dll">
-      <publishTime>04/08/2021 13:45:54</publishTime>
+      <publishTime>08/04/2021 13:45:54</publishTime>
     </File>
     <File Include="System.Net.WebSockets.WebSocketProtocol.dll">
       <publishTime>06/06/2018 10:29:04</publishTime>
@@ -669,25 +669,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:10</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:46</publishTime>
+      <publishTime>12/11/2022 01:10:46</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="tr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="uk/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:10</publishTime>
@@ -702,7 +702,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:12</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/13/2024 16:18:14</publishTime>
+      <publishTime>06/18/2024 14:42:11</publishTime>
     </File>
     <File Include="zh-CN/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:12</publishTime>
@@ -711,52 +711,52 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 12:04:12</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:46</publishTime>
+      <publishTime>12/11/2022 01:10:46</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="zh-Hant/Humanizer.resources.dll">
       <publishTime>01/29/2022 12:04:14</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.Features.resources.dll">
-      <publishTime>11/12/2022 01:16:28</publishTime>
+      <publishTime>12/11/2022 01:16:28</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll">
-      <publishTime>11/12/2022 01:10:32</publishTime>
+      <publishTime>12/11/2022 01:10:32</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:10:46</publishTime>
+      <publishTime>12/11/2022 01:10:46</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.Features.resources.dll">
-      <publishTime>11/12/2022 01:12:22</publishTime>
+      <publishTime>12/11/2022 01:12:22</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.resources.dll">
-      <publishTime>11/12/2022 00:59:20</publishTime>
+      <publishTime>12/11/2022 00:59:20</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll">
-      <publishTime>11/12/2022 01:09:46</publishTime>
+      <publishTime>12/11/2022 01:09:46</publishTime>
     </File>
     <File Include="zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll">
-      <publishTime>11/12/2022 01:09:18</publishTime>
+      <publishTime>12/11/2022 01:09:18</publishTime>
     </File>
     <File Include="ZstdSharp.dll">
-      <publishTime>04/06/2023 09:25:30</publishTime>
+      <publishTime>06/04/2023 09:25:30</publishTime>
     </File>
   </ItemGroup>
 </Project>

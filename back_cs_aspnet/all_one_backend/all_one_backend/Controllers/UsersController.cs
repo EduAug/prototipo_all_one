@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using all_one_backend.Models;
 using all_one_backend.DTOs;
 using all_one_backend.Auth;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace all_one_backend.Controllers
 {
@@ -24,13 +26,6 @@ namespace all_one_backend.Controllers
             _chub = chub;
         }
 
-        [HttpGet("getAll")]
-        public IActionResult GetAllUsers()
-        {
-            var users = _context.Users.ToList();
-            return Ok(users);
-        }
-
         [HttpGet("friendsOf/{userId}")]
         public async Task<IActionResult> GetUserFriends(int userId) 
         {
@@ -49,11 +44,21 @@ namespace all_one_backend.Controllers
             }
         }
 
-        [HttpGet("profile/{userId}")]
-        public async Task<IActionResult> GetUserProfile(int userId)
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetUserProfile()
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            if(token == null) return Unauthorized("Token is missing");
 
+            var payload = _jwtHandler.DecodeToken(token);
+            if (payload == null) return Unauthorized("Invalid token");
+
+            if(!payload.TryGetValue("nameid", out var userIdObj) || userIdObj == null) return Unauthorized("User ID not found in token");
+
+            var userId = int.Parse(userIdObj.ToString());
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null) return NotFound("User not found");
 
             var userProfile = new
@@ -199,13 +204,38 @@ namespace all_one_backend.Controllers
             var user2 = await _context.Users.Include(x => x.Friends).FirstOrDefaultAsync(b => b.Id == uId2);
             
             if(user1 == null || user2 == null) return NotFound("One or both users not found");
-            if (user1.Friends.Contains(user2)) return BadRequest("User is already friends with you");
+            if(user1.Friends.Contains(user2) || user2.Friends.Contains(user1)) return BadRequest("You're friends already!");
             
             user1.Friends.Add(user2);
             user2.Friends.Add(user1);
 
             await _context.SaveChangesAsync();
             return Ok($"Friendship establised between {user1.DisplayName} & {user2.DisplayName}");
+        }
+
+        [HttpPost("removeFriend")]
+        public async Task<IActionResult> RemoveFriend([FromBody] FriendRequestDTO multipurposeDTO)
+        {
+            var uId1 = multipurposeDTO.user1Id;
+            var uId2 = multipurposeDTO.user2Id;
+            var user1 = await _context.Users.Include(x=> x.Friends).FirstOrDefaultAsync(y=> y.Id == uId1);
+            var user2 = await _context.Users.Include(v=> v.Friends).FirstOrDefaultAsync(w=> w.Id == uId2);
+
+            if(user1 == null || user2 == null) return NotFound("One or both of the users not found");
+            if (!user1.Friends.Contains(user2) || !user2.Friends.Contains(user1)) return BadRequest("Users aren't friends");
+
+            user1.Friends.Remove(user2);
+            user2.Friends.Remove(user1);
+
+            int firstUserId = Math.Min(uId1, uId2);
+            int secondUserId = Math.Max(uId1, uId2);
+
+            var groupName = $"{firstUserId} || {secondUserId}";
+
+            await _chub.DeleteGroup(groupName);
+
+            await _context.SaveChangesAsync();
+            return Ok($"Friendship ended between ${user1.DisplayName} & ${user2.DisplayName}");
         }
 
         [HttpPut("update")]

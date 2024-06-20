@@ -22,7 +22,7 @@ export class VotingComponent implements OnInit {
   }
 
   loadTopApproved(){
-    this.http.get("http://localhost:5164/deeper/topics/topApproved").subscribe({
+    this.http.get("http://redeallone.somee.com/deeper/topics/topApproved").subscribe({
       next: (topics)=>{
         this.topApprovedTopics= topics;
       }
@@ -34,7 +34,7 @@ export class VotingComponent implements OnInit {
     if(token){
       this.auths.decodeToken(token).subscribe({
         next:(data)=>{
-          this.http.get(`http://localhost:5164/deeper/topics/getUnapproved?userId=${data.nameid}`).subscribe({
+          this.http.get(`http://redeallone.somee.com/deeper/topics/getUnapproved?userId=${data.nameid}`).subscribe({
             next:(unap)=>{
               this.unapprovedTopics = unap;
             },
@@ -51,7 +51,7 @@ export class VotingComponent implements OnInit {
       this.auths.decodeToken(token).subscribe({
         next: (data)=> {
           const id = data.nameid
-          this.http.get(`http://localhost:5164/deeper/topics/getUnapproved?userId=${id}&queriedTopic=${this.searchQuery}`).subscribe({
+          this.http.get(`http://redeallone.somee.com/deeper/topics/getUnapproved?userId=${id}&queriedTopic=${this.searchQuery}`).subscribe({
             next: (unapQueried)=> {
               this.unapprovedTopics = unapQueried;
             },
@@ -71,7 +71,7 @@ export class VotingComponent implements OnInit {
             informedTopic: this.informedTopic,
             userId: data.nameid
           };
-          this.http.post(`http://localhost:5164/deeper/topics/suggest`, requestBody).subscribe({
+          this.http.post(`http://redeallone.somee.com/deeper/topics/suggest`, requestBody).subscribe({
             next: (retSuggest)=> {
               console.log(retSuggest);
               this.msg = 'Suggested Successfully';
@@ -104,7 +104,7 @@ export class VotingComponent implements OnInit {
             topicId: topicId
           };
           console.log(requestBody);
-          this.http.post(`http://localhost:5164/deeper/topics/voteForTopic`, requestBody, {responseType: 'text'}).subscribe({
+          this.http.post(`http://redeallone.somee.com/deeper/topics/voteForTopic`, requestBody, {responseType: 'text'}).subscribe({
             next: (voted)=> {
               console.log(voted);
               this.snackbar.open(voted, 'Close', {

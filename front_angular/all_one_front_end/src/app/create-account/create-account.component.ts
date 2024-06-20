@@ -68,7 +68,7 @@ export class CreateAccountComponent {
   fetchMatchingTopics(): void {
     setTimeout(() => {
       if (this.topicName.length > 0) {
-        this.http.get<any[]>('http://localhost:5164/deeper/topics/byName?thisTopicName=' + this.topicName)
+        this.http.get<any[]>('http://redeallone.somee.com/deeper/topics/byName?thisTopicName=' + this.topicName)
           .subscribe(data => {
             this.matchingTopics = data.map(topic => ({ id: topic.id, name: topic.name }));
             this.matchingTopics.unshift({id: -1, name: "Select a topic"});
@@ -108,12 +108,12 @@ export class CreateAccountComponent {
       user
     );
 
-    this.http.post('http://localhost:5164/users/signup', user, { responseType: 'text' })
+    this.http.post('http://redeallone.somee.com/users/signup', user, { responseType: 'text' })
     .subscribe({
       next: (response) =>{
       console.log(response);
 
-      this.http.post<any>('http://localhost:5164/users/login', {
+      this.http.post<any>('http://redeallone.somee.com/users/login', {
         UserName: user.DisplayName,
         Password: user.Password
       }).subscribe({

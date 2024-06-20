@@ -32,7 +32,7 @@ namespace all_one_backend.Controllers
                 var userTopicIds = user.Topics.Select(t => t.Id).ToList();
 
                 var matchingTopics = _context.Topics
-                    .Where(t => t.TopicName.Contains(thisTopicName.ToLower()) && !userTopicIds.Contains(t.Id) && t.TotalVotes >= 1000)
+                    .Where(t => t.TopicName.Contains(thisTopicName.ToLower()) && !userTopicIds.Contains(t.Id) && t.TotalVotes >= 75)
                     .Select(t => new { Id = t.Id, Name = t.TopicName })
                     .ToList();
 
@@ -41,7 +41,7 @@ namespace all_one_backend.Controllers
             else
             {
                 var matchingTopics = _context.Topics
-                    .Where(a => a.TopicName.Contains(thisTopicName.ToLower()) && a.TotalVotes >= 1000)
+                    .Where(a => a.TopicName.Contains(thisTopicName.ToLower()) && a.TotalVotes >= 75)
                     .Select(b => new { Id = b.Id, Name = b.TopicName })
                     .ToList();
 
@@ -53,7 +53,7 @@ namespace all_one_backend.Controllers
         public async Task<IActionResult> GetTopFiveApprovedTopics()
         {
             var topApprovedTopics = await _context.Topics
-                .Where(t => t.TotalVotes >= 1000)
+                .Where(t => t.TotalVotes >= 75)
                 .OrderByDescending(t => t.Subscribers)
                 .Take(5)
                 .Select(t => new { Id = t.Id, Name = t.TopicName, Subscribers = t.Subscribers })
@@ -150,7 +150,7 @@ namespace all_one_backend.Controllers
                 var treatedQuery = Regex.Replace(queriedTopic, "[^a-zA-Z0-9]", "").ToUpper();
                 var matchingUnapprovedTopics = await _context.Topics
                     .Where(
-                        t => t.TotalVotes < 1000 &&
+                        t => t.TotalVotes < 75 &&
                         !userVotedTopicIds.Contains(t.Id)
                         )
                     .OrderByDescending(t => t.TotalVotes)
@@ -171,7 +171,7 @@ namespace all_one_backend.Controllers
             {
                 var unapprovedTopics = await _context.Topics
                     .Where(
-                        t => t.TotalVotes < 1000 &&
+                        t => t.TotalVotes < 75 &&
                         !userVotedTopicIds.Contains(t.Id)
                         )
                     .OrderByDescending (t => t.TotalVotes)
@@ -212,7 +212,7 @@ namespace all_one_backend.Controllers
             await _context.Votes.AddAsync(newV);
             topic.TotalVotes += 1;
 
-            if(topic.TotalVotes >= 1000)
+            if(topic.TotalVotes >= 75)
             {
                 var usersWhoVotedForTopic = await _context.Users
                     .Where(u => u.Votes.Any(v => v.TopicId == topic.Id))

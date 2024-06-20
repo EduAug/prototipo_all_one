@@ -13,7 +13,7 @@ export class ChatService {
   constructor(@Inject(Number) private userIdParam:number, private http: HttpClient) {
     const userId = userIdParam;
     this.hubConn = new HubConnectionBuilder()
-      .withUrl(`http://localhost:5164/chatHub?userId=${userId}`)
+      .withUrl(`http://redeallone.somee.com/chatHub?userId=${userId}`)
       .build();
 
     this.hubConn.start().catch(err=>console.error("Something went wrong booting up the chat: ",err));
@@ -60,6 +60,6 @@ export class ChatService {
   // -------------------------------------
 
   fetchGroupMessages(groupName: string): Observable<any[]>{
-    return this.http.get<any[]>(`http://localhost:5164/secrecy/messages/${groupName}`);
+    return this.http.get<any[]>(`http://redeallone.somee.com/secrecy/messages/${groupName}`);
   }
 }

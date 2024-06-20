@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   decodeToken(token : String): Observable<any>{
-    return this.http.get<any>('http://localhost:5164/crypt/decodeToken_generatedAsJWT',{
+    return this.http.get<any>('http://redeallone.somee.com/crypt/decodeToken_generatedAsJWT',{
       headers: {Authorization: `Bearer ${token}`}
     });
   }

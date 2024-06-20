@@ -30,7 +30,7 @@ export class FindtopicsComponent {
       this.auths.decodeToken(token).subscribe(
         (data: any) => {
           const userId = data.nameid;
-          this.http.get<any[]>(`http://localhost:5164/deeper/topics/byName?thisTopicName=${this.topicName}&userId=${userId}`)
+          this.http.get<any[]>(`http://redeallone.somee.com/deeper/topics/byName?thisTopicName=${this.topicName}&userId=${userId}`)
             .subscribe(data => {
               this.matchingTopics = data.map(topic => ({ id: topic.id, name: topic.name }));
             });
@@ -67,7 +67,7 @@ export class FindtopicsComponent {
   }
 
   subscribeToTopic(userId: number, topicId: number): void {
-    const url = `http://localhost:5164/deeper/topics/subscribe?userId=${userId}&topicId=${topicId}`;
+    const url = `http://redeallone.somee.com/deeper/topics/subscribe?userId=${userId}&topicId=${topicId}`;
     this.http.post(url, {}, { responseType: 'text' }).subscribe(
       (response) => {
         console.log('Subscription successful:', response);

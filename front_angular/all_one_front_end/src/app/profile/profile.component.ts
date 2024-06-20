@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
@@ -31,16 +31,19 @@ export class ProfileComponent implements OnInit{
     ngOnInit(): void {
       const token = sessionStorage.getItem('auth_token');
       if (token) {
-        this.auths.decodeToken(token).subscribe(userId => {
-          this.http.get<any>(`http://localhost:5164/users/profile/${userId.nameid}`).subscribe(profile => {
-            this.profileData = profile;
-            this.birthDate = this.datePipe.transform(this.profileData.birthday, 'yyyy-MM-dd');
-            this.alreadySavedAddress();
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-            this.http.get<any>(`http://localhost:5164/deeper/topics/${userId.nameid}/topics`).subscribe(topics => {
-              this.topics = topics;
-            });
+        this.http.get<any>(`http://redeallone.somee.com/users/profile`, { headers }).subscribe(profile => {
+          this.profileData = profile;
+          this.birthDate = this.datePipe.transform(this.profileData.birthday, 'yyyy-MM-dd');
+          this.alreadySavedAddress();
+        });
+        this.auths.decodeToken(token).subscribe(userId => {
+
+          this.http.get<any>(`http://redeallone.somee.com/deeper/topics/${userId.nameid}/topics`).subscribe(topics => {
+            this.topics = topics;
           });
+
         });
       }
 
@@ -127,7 +130,7 @@ export class ProfileComponent implements OnInit{
       if (token) {
         this.auths.decodeToken(token).subscribe({
           next: (userId) => {
-            this.http.put(`http://localhost:5164/users/update?userId=${userId.nameid}`, finalUserObject, { responseType: 'text' }).subscribe({
+            this.http.put(`http://redeallone.somee.com/users/update?userId=${userId.nameid}`, finalUserObject, { responseType: 'text' }).subscribe({
               next: (response) => {
                 console.log(response);
                 sessionStorage.removeItem('auth_token');
@@ -152,7 +155,7 @@ export class ProfileComponent implements OnInit{
       if (token){
         this.auths.decodeToken(token).subscribe({
           next: (userId) => {
-            this.http.delete(`http://localhost:5164/users/final/delete/${userId.nameid}`, { responseType: 'text' }).subscribe({
+            this.http.delete(`http://redeallone.somee.com/users/final/delete/${userId.nameid}`, { responseType: 'text' }).subscribe({
               next: (response) => {
                 console.log(response);
                 sessionStorage.removeItem('auth_token');

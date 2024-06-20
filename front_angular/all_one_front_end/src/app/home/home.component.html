@@ -17,8 +17,11 @@
         </div>
       </div>
       <div class="col-md-8" *ngIf="currentChattingId != null">
-        <div class="chat-header p-2 bg-white text-dark">
-          <h3 class="m-0">{{ currentChattingDName }}</h3>
+        <div class="chat-header p-2 bg-white text-dark row">
+          <div class="col-md-1"></div>
+          <h3 class="text-start m-0 col-md-8">{{ currentChattingDName }}</h3>
+          <button class="btn btn-danger btn-sm col-md-2" (click)="removeFriend()">Remove Friend</button>
+          <div class="col-md-1"></div>
         </div>
         <div class="chat-messages" #messagesCont>
           <div *ngFor="let message of chatMessages" [ngClass]="message.senderId.toString() === currentChattingId.toString() ? 'other-message rounded p-2' : 'own-message rounded p-2'">

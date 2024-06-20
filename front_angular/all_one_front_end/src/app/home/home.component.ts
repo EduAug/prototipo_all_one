@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit, AfterViewChecked {
         this.auths.decodeToken(token).subscribe(
           (data) => {
             this.displayName = data.unique_name;
-            this.http.get<any>(`http://localhost:5164/users/friendsof/${data.nameid}`).subscribe({
+            this.http.get<any>(`http://redeallone.somee.com/users/friendsof/${data.nameid}`).subscribe({
               next: (friends) => {
                 this.friends = friends;
                 resolve();
@@ -144,5 +144,30 @@ export class HomeComponent implements OnInit, AfterViewChecked {
       });
     }
     this.messageInput = '';
+  }
+
+  removeFriend(): void{
+    const token = sessionStorage.getItem('auth_token');
+    if(this.currentChattingId && token){
+      this.auths.decodeToken(token).subscribe({
+        next: (data)=> {
+          const uId = data.nameid;
+          const fId = this.currentChattingId;
+
+          this.http.post(`http://redeallone.somee.com/users/removeFriend`, { user1Id: uId, user2Id: fId }, { responseType: 'text' })
+            .subscribe({
+              next: ()=> {
+                console.log(`Friend removed! Bye ${this.currentChattingDName}`);
+                this.currentChattingId= null;
+                this.currentChattingDName= "";
+                this.fetchFriends();
+              },
+              error: (err)=> {
+                console.error("Something went wrong when removing friend: ", err);
+              }
+            });
+        }
+      });
+    }
   }
 }

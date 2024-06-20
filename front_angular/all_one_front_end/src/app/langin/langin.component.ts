@@ -23,7 +23,7 @@ export class LanginComponent {
       UserName: this.UserName,
       Password: this.Password
     };
-    this.http.post<any>('http://localhost:5164/users/login', loginData).subscribe({
+    this.http.post<any>('http://redeallone.somee.com/users/login', loginData).subscribe({
       next: (data) =>{
         this.auths.login(data.token);
         this.router.navigateByUrl('/home');

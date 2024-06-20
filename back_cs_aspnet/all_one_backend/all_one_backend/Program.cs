@@ -12,7 +12,7 @@ using all_one_backend;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddDbContext<AllOneDatabContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -20,7 +20,7 @@ builder.Services.AddDbContext<AllOneDatabContext>(options =>
 builder.Services.AddSingleton<IJwtHandler, JwtHandler>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -60,7 +60,21 @@ builder.Services.AddSingleton<ChatHub>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var svcs = scope.ServiceProvider;
+    try
+    {
+        var context = svcs.GetRequiredService<AllOneDatabContext>();
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = svcs.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occured while migrating database.");
+    }
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
